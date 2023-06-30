@@ -24,4 +24,18 @@ public static class ToolsMenu
     
     }
 
+    [UnityEditor.MenuItem("Maulik/Scripts/Singleton Templet")]
+    public  static void CreateSingleton()
+    {
+        string templetPath = "Packages/com.maulik.tools/Editor/SingletonTemplate.cs";
+        string destPath = Path.Combine(dataPath, "_project", "Scripts", "Template");
+        string fileName = Path.GetFileName(templetPath);
+        string destFilePath = Path.Combine(destPath, fileName);
+        CreateDirectory(destPath);
+        CopyAsset(templetPath, destPath);
+        ImportAsset(destFilePath);
+        Refresh();
+
+    }
+
 }
