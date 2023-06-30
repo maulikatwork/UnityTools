@@ -28,10 +28,10 @@ public static class ToolsMenu
     public  static void CreateSingleton()
     {
         string templetPath = "Packages/com.maulik.tools/Editor/SingletonTemplate.cs";
-        string destPath = Path.Combine(dataPath, "_project", "Scripts", "Template");
+        string destPath = Path.Combine("_project", "Scripts", "Template");
         string fileName = Path.GetFileName(templetPath);
         string destFilePath = Path.Combine(destPath, fileName);
-        CreateDirectory(destPath);
+        CreateDirectory(Combine(dataPath,destPath));
         CopyAsset(templetPath, destPath);
         ImportAsset(destFilePath);
         Refresh();
